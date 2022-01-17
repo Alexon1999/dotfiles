@@ -1,0 +1,69 @@
+# personnaliser le terminal
+https://www.mokkapps.de/blog/boost-your-productivity-by-using-the-terminal-iterm-and-zsh/
+
+zsh is a shell(Interface système) like bash.
+
+Oh my zsh is a plugin manager for zsh
+
+. : is for hidden files/directories like .zshrc or .zprofile
+
+1) Homebrew (package manager for macOS)
+
+https://brew.sh/
+https://formulae.brew.sh/
+
+man brew :brew manual
+
+# search if a package exists
+brew search <<name>>
+
+brew install <<name of formula/package>>
+brew install --cask <<name of cask/macOS app>>
+brew tap <<git repository of formula/casks>>
+
+brew list :see all the installed packages
+brew tap :see all the packages installed by taps
+
+brew info <<name_of_package>> (you can have the info about your package and where is installed)
+
+brew uninstall/untap {package_name}
+brew update
+
+brew install git
+brew install --cask postman
+
+ex: Install java jdk using brew
+brew search jdk
+brew search adoptopenjdk
+brew install --cask adoptopenjdk16
+https://mkyong.com/java/how-to-install-java-on-mac-osx/
+
+https://stackoverflow.com/questions/51780530/how-do-i-uninstall-the-java-jdk-in-macos
+New version jdk <-- recommanded way -->
+brew search openjdk
+brew info openjdk
+brew install openjdk
+
+
+2) .bash_profile & .bashrc file is for all the configuration for the bash shell.
+   .zprofile & .zshrc file is for the zsh shell.
+
+
+3) Copy/Paste to clipboard
+pbcopy <  <<path_to_file>>
+
+pbcopy < commands.txt
+pbpaste > test.txt 
+
+
+4) where a program is installed
+
+# give you where the executable is 
+where java
+which java
+
+# where the directory of a program
+sudo find <<directory>> -name <<name of program>>
+
+ex: sudo find / -name java  # / is for root directory
+sudo find /opt/homebrew -name java
