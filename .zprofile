@@ -5,10 +5,18 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # export PATH="your_path:$PATH"
 
 # openjdk
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+#export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+# jenv (manage java versions)
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 
 # pixie cli
 export PATH="/Users/alexon/bin:$PATH"
+
+# nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 
 # zsh completions (brew install zsh-completions)
