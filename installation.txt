@@ -7,15 +7,23 @@ brew install openjdk
 
 # setup java version
 https://chamikakasun.medium.com/how-to-manage-multiple-java-version-in-macos-e5421345f6d0
+https://notiz.dev/blog/how-to-manage-multiple-java-versions-on-mac
 
 Ex : set java_home on terminal or put in .zprofile or .zshrc
 export JAVA_HOME=/Users/alexon/Library/Java/JavaVirtualMachines/corretto-15.0.2/Contents/Home
 
-# see which java version, you are using
+# see the default jdk you are using
 /usr/libexec/java_home
 
 # see list of all available java versions and paths
 /usr/libexec/java_home -V
+
+# set java version
+/usr/libexec/java_home -v 15.0.2
+export JAVA_HOME=`/usr/libexec/java_home -v 15.0.2`
+
+
+# OR use this method
 
 # jenv (java version manager)
 brew install jenv
