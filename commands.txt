@@ -39,7 +39,7 @@ brew install --cask adoptopenjdk16
 https://mkyong.com/java/how-to-install-java-on-mac-osx/
 
 https://stackoverflow.com/questions/51780530/how-do-i-uninstall-the-java-jdk-in-macos
-New version jdk <-- recommanded way -->
+New jdk version <-- recommanded way -->
 brew search openjdk
 brew info openjdk
 brew install openjdk
