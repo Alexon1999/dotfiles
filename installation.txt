@@ -1,0 +1,59 @@
+https://stackoverflow.com/questions/51780530/how-do-i-uninstall-the-java-jdk-in-macos
+New jdk version <-- recommanded way -->
+brew search openjdk
+brew info openjdk
+brew install openjdk
+
+
+# setup java version
+https://chamikakasun.medium.com/how-to-manage-multiple-java-version-in-macos-e5421345f6d0
+
+Ex : set java_home on terminal or put in .zprofile or .zshrc
+export JAVA_HOME=/Users/alexon/Library/Java/JavaVirtualMachines/corretto-15.0.2/Contents/Home
+
+# see which java version, you are using
+/usr/libexec/java_home
+
+# see list of all available java versions and paths
+/usr/libexec/java_home -V
+
+# jenv (java version manager)
+brew install jenv
+
+-------
+Config
+-------
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+jenv add <<jdk_path>>
+	jenv add /Users/alexon/Library/Java/JavaVirtualMachines/corretto-15.0.2/Contents/Home
+
+jenv versions <-- see all the versions
+jenv version <-- see current version ( system is what used by the Mac)
+
+------
+Change versions
+------
+jenv global <<version>> <-- every where
+jenv global 15.0.2
+
+# back to system java version
+jenv global system
+
+
+jenv local <<version>> <-- version to configure for this directory
+
+# see java version
+java -version
+
+
+# if you use maven
+---------------------
+# ensure that JAVA_HOME is correct
+jenv enable-plugin export
+# make Maven aware of the Java version in use (and switch when your project does)
+jenv enable-plugin maven
+
+# see maven version
+mvn -v
