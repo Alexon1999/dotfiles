@@ -3,6 +3,7 @@ New jdk version <-- recommanded way -->
 brew search openjdk
 brew info openjdk
 brew install openjdk
+brew search maven
 
 
 # setup java version
@@ -60,8 +61,12 @@ java -version
 ---------------------
 # ensure that JAVA_HOME is correct
 jenv enable-plugin export
-# make Maven aware of the Java version in use (and switch when your project does)
+
+# make Maven aware of the Java version in use (and switch automatically when your project does)
+# run these commands also when java version in maven is not correct
+jenv disable-plugin maven
 jenv enable-plugin maven
+
 
 # see maven version
 mvn -v
