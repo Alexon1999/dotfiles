@@ -51,7 +51,7 @@ jenv global 15.0.2
 jenv global system
 
 
-jenv local <<version>> <-- version to configure for this directory
+jenv local <<version>> <-- version to configure for a directory
 
 # see java version
 java -version
