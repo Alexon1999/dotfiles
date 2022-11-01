@@ -18,6 +18,22 @@ export PATH="/Users/alexon/bin:$PATH"
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
+# conda config --set auto_activate_base false
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/alexon/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/alexon/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/alexon/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/alexon/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
 
 # zsh completions (brew install zsh-completions)
 if type brew &>/dev/null; then
@@ -100,3 +116,6 @@ export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 1) # red
 export LESS_TERMCAP_ue=$(tput sgr0)
 # End bold, blinking, standout, underline
 export LESS_TERMCAP_me=$(tput sgr0)
+
+# Added by Toolbox App
+export PATH="$PATH:/Users/alexon/Library/Application Support/JetBrains/Toolbox/scripts"
