@@ -7,9 +7,12 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # openjdk
 #export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
-# jenv (manage java versions)
+# jenv (java version manager)
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
+# rbenv (ruby version manager)
+eval "$(rbenv init -)"
 
 # pixie cli
 export PATH="/Users/alexon/bin:$PATH"
