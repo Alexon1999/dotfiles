@@ -5,7 +5,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # export PATH="your_path:$PATH"
 
 # openjdk
-#export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+# export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # jenv (java version manager)
 export PATH="$HOME/.jenv/bin:$PATH"
@@ -13,6 +13,10 @@ eval "$(jenv init -)"
 
 # rbenv (ruby version manager)
 eval "$(rbenv init -)"
+
+# rbenv install 3.1.2
+# rbenv versions
+# rbenv global 3.1.2
 
 # pixie cli
 export PATH="/Users/alexon/bin:$PATH"
@@ -70,11 +74,14 @@ source ~/.zsh/copydir/copydir.zsh
 source ~/.zsh/copyfile/copyfile.zsh
  
 
-# colorls (gem install colorls && brew tap homebrew/cask-fonts && brew install --cask font-hack-nerd-font)
+# colorls (color and icons) (gem install colorls && brew tap homebrew/cask-fonts && brew install --cask font-hack-nerd-font)
 # https://github.com/athityakumar/colorls
 # man gem colors
 #source /Library/Ruby/Gems/2.6.0/gems/colorls-1.4.4/lib/tab_complete.sh
 source $(dirname $(gem which colorls))/tab_complete.sh
+
+# changing the icon(s) to other unicode icons of choice
+# subl $(dirname $(gem which colorls))/yaml
 
 alias ls="colorls --sort-dirs"
 alias lc="colorls --tree --light"
@@ -82,6 +89,10 @@ alias lc="colorls --tree --light"
 # ncdu : for find/delete programs easily.
 # brew install ncdu
 # ncdu
+
+# lazy docker
+# https://github.com/jesseduffield/lazydocker
+alias lzd="lazydocker"
 
 # navigation by tabs
 autoload -U compinit && compinit -u
@@ -95,12 +106,6 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
 
-
-# gives description of the pc (brew install neofetch)
-# neofetch
-
-# brew install cowboy and fortune
-fortune | cowsay -f tux
 
 # terminal designs
 
@@ -122,3 +127,13 @@ export LESS_TERMCAP_me=$(tput sgr0)
 
 # Added by Toolbox App
 export PATH="$PATH:/Users/alexon/Library/Application Support/JetBrains/Toolbox/scripts"
+
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/alexon/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+
+# Google Cloud SDK
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/alexon/Applications/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/alexon/Applications/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/alexon/Applications/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/alexon/Applications/google-cloud-sdk/completion.zsh.inc'; fi
